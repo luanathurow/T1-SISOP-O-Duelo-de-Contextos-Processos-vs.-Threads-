@@ -1,0 +1,9 @@
+CC = gcc
+CFLAGS = -Wall
+
+all:
+	$(CC) thread.c -o thread -lpthread
+	$(CC) process.c -o process -pthread
+
+clean:
+	rm -f thread process
