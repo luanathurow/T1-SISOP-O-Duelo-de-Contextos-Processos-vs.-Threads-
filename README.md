@@ -3,7 +3,6 @@
 
 ## 👥 Integrantes
 - **Luana Thurow**
-- **Sergio Filho**
 
 ---
 
@@ -63,4 +62,3 @@ O gráfico a seguir apresenta o **tempo de execução em função do número de 
 Os resultados demonstram que **threads apresentam menor overhead de criação** e comunicação mais eficiente quando comparadas a processos. Por outro lado, **processos possuem maior isolamento**, porém com custo elevado de criação e comunicação, principalmente quando utilizam memória compartilhada e semáforos.
 
 Os experimentos sem sincronização (T1 e P1) apresentam melhor desempenho, porém resultados incorretos devido à corrupção dos dados. Já os experimentos com sincronização (T2 e P2) garantem consistência, mas com significativo impacto no desempenho, evidenciando a importância do uso adequado de mecanismos de sincronização e a influência do modelo de concorrência na escalabilidade.
-``
