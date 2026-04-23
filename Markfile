@@ -1,9 +1,16 @@
 CC = gcc
 CFLAGS = -Wall
+LDFLAGS = -pthread
 
-all:
-	$(CC) thread.c -o thread -lpthread
-	$(CC) process.c -o process -pthread
+.PHONY: all clean
+
+all: threads processos
+
+threads: threads.c
+    $(CC) $(CFLAGS) threads.c -o threads $(LDFLAGS)
+
+processos: processos.c
+    $(CC) $(CFLAGS) processos.c -o processos $(LDFLAGS)
 
 clean:
-	rm -f thread process
+    rm -f threads processos
