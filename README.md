@@ -3,20 +3,29 @@
 
 ## 👥 Integrantes
 - **Luana Thurow**
+- **Sergio Filho**
 
 ---
 
 ## 🖥️ Assinatura do Hardware
 
-- **Processador:** Intel Core i5‑2400 @ 3.10 GHz  
-- **Núcleos físicos:** 4  
-- **Threads por núcleo:** 1 (sem Hyper‑Threading)  
-- **Total de CPUs lógicas:** 4  
-- **Arquitetura:** x86_64  
-- **Cache:**  
-  - L1: 128 KB (4 instâncias)  
-  - L2: 1 MB (4 instâncias)  
-  - L3: 6 MB (compartilhado)
+ ## Saída do comando `lscpu` utilizado nos experimentos:
+- Arquitetura:                         x86_64
+- Modo(s) operacional da CPU:          32-bit, 64-bit
+- CPU(s):                              4
+- Thread(s) por núcleo:                1
+- Núcleo(s) por soquete:               4
+- Soquete(s):                          1
+- Nome do modelo:                      Intel(R) Core(TM) i5-2400 CPU @ 3.10GHz
+- CPU MHz mín.:                        1600.0000
+- CPU MHz máx.:                        3400.0000
+- Caches (soma de todos):
+  - L1d:                               128 KiB (4 instâncias)
+  - L1i:                               128 KiB (4 instâncias)
+  - L2:                                1 MiB (4 instâncias)
+  - L3:                                6 MiB (1 instância)
+- Arquitetura NUMA:                    1 nó
+- Virtualização:                       VT-x
 
 ---
 
@@ -40,6 +49,10 @@
 | P2 – Processos com semáforo | 8 | 177,713 | 1.000.000.000 |
 
 ---
+
+Os experimentos sem sincronização (T1 e P1) apresentam tempos significativamente menores, porém com resultados incorretos. 
+Os experimentos com sincronização (T2 e P2) garantem correção, mas apresentam alto overhead, especialmente no caso de processos com semáforo (P2). 
+O aumento de N melhora o tempo em alguns cenários sem sincronização (especialmente P1), mas piora a escalabilidade nos cenários sincronizados devido à contenção. 
 
 ## ⚠️ Análise de Corrupção
 
